@@ -8,7 +8,7 @@ ENV SPARK_HOME /usr/local/spark
 RUN mkdir $SPARK_HOME/yarn-remote-client
 ADD yarn-remote-client $SPARK_HOME/yarn-remote-client
 
-RUN $BOOTSTRAP && $HADOOP_PREFIX/bin/hadoop dfsadmin -safemode leave && $HADOOP_PREFIX/bin/hdfs dfs -put $SPARK_HOME-1.4.1-bin-hadoop2.6/lib /spark
+RUN $BOOTSTRAP && $HADOOP_PREFIX/bin/hdfs dfsadmin -safemode leave && $HADOOP_PREFIX/bin/hdfs dfs -put $SPARK_HOME-1.4.1-bin-hadoop2.6/lib /spark
 
 ENV YARN_CONF_DIR $HADOOP_PREFIX/etc/hadoop
 ENV PATH $PATH:$SPARK_HOME/bin:$HADOOP_PREFIX/bin
