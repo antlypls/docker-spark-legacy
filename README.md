@@ -1,17 +1,20 @@
 Apache Spark on Docker
 ==========
 
-This repository contains a Docker file to build a Docker image with Apache Spark. This Docker image depends on our previous [Hadoop Docker](https://github.com/sequenceiq/hadoop-docker) image, available at the SequenceIQ [GitHub](https://github.com/sequenceiq) page.
-The base Hadoop Docker image is also available as an official [Docker image](https://registry.hub.docker.com/u/sequenceiq/hadoop-docker/).
+> This is a fork of https://github.com/sequenceiq/docker-spark repository
+> that just provides Spark 1.4.1
+
+This repository contains a Docker file to build a Docker image with Apache Spark.
+This Docker image depends on [Hadoop Docker](https://github.com/sequenceiq/hadoop-docker) image.
 
 ##Pull the image from Docker Repository
 ```
-docker pull sequenceiq/spark:1.4.0
+docker pull antlypls/spark:1.4.1
 ```
 
 ## Building the image
 ```
-docker build --rm -t sequenceiq/spark:1.4.0 .
+docker build --rm -t antlypls/spark:1.4.1 .
 ```
 
 ## Running the image
@@ -20,16 +23,16 @@ docker build --rm -t sequenceiq/spark:1.4.0 .
 * in your /etc/hosts file add $(boot2docker ip) as host 'sandbox' to make it easier to access your sandbox UI
 * open yarn UI ports when running container
 ```
-docker run -it -p 8088:8088 -p 8042:8042 -h sandbox sequenceiq/spark:1.4.0 bash
+docker run -it -p 8088:8088 -p 8042:8042 -h sandbox antlypls/spark:1.4.1 bash
 ```
 or
 ```
-docker run -d -h sandbox sequenceiq/spark:1.4.0 -d
+docker run -d -h sandbox antlypls/spark:1.4.1 -d
 ```
 
 ## Versions
 ```
-Hadoop 2.6.0 and Apache Spark v1.4.0 on Centos 
+Hadoop 2.6.0 and Apache Spark v1.4.1 on Centos
 ```
 
 ## Testing
@@ -67,7 +70,7 @@ spark-submit \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
-$SPARK_HOME/lib/spark-examples-1.4.0-hadoop2.6.0.jar
+$SPARK_HOME/lib/spark-examples-1.4.1-hadoop2.6.0.jar
 ```
 
 Estimating Pi (yarn-client mode):
@@ -80,5 +83,5 @@ spark-submit \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
-$SPARK_HOME/lib/spark-examples-1.4.0-hadoop2.6.0.jar
+$SPARK_HOME/lib/spark-examples-1.4.1-hadoop2.6.0.jar
 ```
