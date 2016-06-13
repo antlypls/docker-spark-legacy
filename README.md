@@ -2,19 +2,19 @@ Apache Spark on Docker
 ==========
 
 > This is a fork of https://github.com/sequenceiq/docker-spark repository
-> that just provides Spark 1.6.0
+> that just provides Spark 1.6.1
 
 This repository contains a Docker file to build a Docker image with Apache Spark.
 This Docker image depends on [Hadoop Docker](https://github.com/sequenceiq/hadoop-docker) image.
 
 ##Pull the image from Docker Repository
 ```
-docker pull antlypls/spark:1.6.0
+docker pull antlypls/spark:1.6.1
 ```
 
 ## Building the image
 ```
-docker build --rm -t antlypls/spark:1.6.0 .
+docker build --rm -t antlypls/spark:1.6.1 .
 ```
 
 ## Running the image
@@ -23,16 +23,16 @@ docker build --rm -t antlypls/spark:1.6.0 .
 * in your /etc/hosts file add $(boot2docker ip) as host 'sandbox' to make it easier to access your sandbox UI
 * open yarn UI ports when running container
 ```
-docker run -it -p 8088:8088 -p 8042:8042 -h sandbox antlypls/spark:1.6.0 bash
+docker run -it -p 8088:8088 -p 8042:8042 -h sandbox antlypls/spark:1.6.1 bash
 ```
 or
 ```
-docker run -d -h sandbox antlypls/spark:1.6.0 -d
+docker run -d -h sandbox antlypls/spark:1.6.1 -d
 ```
 
 ## Versions
 ```
-Hadoop 2.6.0 and Apache Spark v1.6.0 on Centos
+Hadoop 2.6.0 and Apache Spark v1.6.1 on Centos
 ```
 
 ## Testing
@@ -70,7 +70,7 @@ spark-submit \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
-$SPARK_HOME/lib/spark-examples-1.6.0-hadoop2.6.0.jar
+$SPARK_HOME/lib/spark-examples-1.6.1-hadoop2.6.0.jar
 ```
 
 Estimating Pi (yarn-client mode):
@@ -83,5 +83,5 @@ spark-submit \
 --driver-memory 1g \
 --executor-memory 1g \
 --executor-cores 1 \
-$SPARK_HOME/lib/spark-examples-1.6.0-hadoop2.6.0.jar
+$SPARK_HOME/lib/spark-examples-1.6.1-hadoop2.6.0.jar
 ```
