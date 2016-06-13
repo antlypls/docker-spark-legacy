@@ -30,3 +30,4 @@ then
 else
 	/bin/bash -c "$*"
 fi
+tail -f /dev/null
