@@ -1,6 +1,12 @@
 FROM sequenceiq/hadoop-docker:2.6.0
 MAINTAINER antlypls
 
+#JAVA 1.8
+RUN yum -y remove jdk*
+RUN curl -LO "http://download.oracle.com/otn-pub/java/jdk/8u91-b14/jdk-8u91-linux-x64.rpm" -H 'Cookie: oraclelicense=accept-securebackup-cookie'
+RUN rpm -i jdk-8u91-linux-x64.rpm
+RUN rm jdk-8u91-linux-x64.rpm
+
 #support for Hadoop 2.6.0
 RUN curl -s https://www.apache.org/dist/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz | tar -xz -C /usr/local/
 RUN cd /usr/local && ln -s spark-1.6.1-bin-hadoop2.6 spark
