@@ -51,7 +51,7 @@ spark-shell \
 --executor-memory 1g \
 --executor-cores 1
 
-# execute the the following command which should return 1000
+# execute the following command which should return 1000
 scala> sc.parallelize(1 to 1000).count()
 ```
 ### YARN-cluster mode
@@ -61,7 +61,7 @@ In yarn-cluster mode, the Spark driver runs inside an application master process
 Estimating Pi (yarn-cluster mode):
 
 ```
-# execute the the following command which should write the "Pi is roughly 3.1418" into the logs
+# execute the following command which should write the "Pi is roughly 3.1418" into the logs
 # note you must specify --files argument in cluster mode to enable metrics
 spark-submit \
 --class org.apache.spark.examples.SparkPi \
@@ -76,7 +76,7 @@ $SPARK_HOME/lib/spark-examples-1.6.2-hadoop2.6.0.jar
 Estimating Pi (yarn-client mode):
 
 ```
-# execute the the following command which should print the "Pi is roughly 3.1418" to the screen
+# execute the following command which should print the "Pi is roughly 3.1418" to the screen
 spark-submit \
 --class org.apache.spark.examples.SparkPi \
 --master yarn-client \
